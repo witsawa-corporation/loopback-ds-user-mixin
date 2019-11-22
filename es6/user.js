@@ -31,13 +31,17 @@ export default (Model, bootOptions = {}) => {
     }
 
     Model.defineProperty(options.createdBy, {
-        type: 'number',
-        required: options.required
+        type: 'string',
+        required: options.required,
+        id: true, 
+        mongodb: {dataType: 'ObjectID'}
     });
 
     Model.defineProperty(options.updatedBy, {
-        type: 'number',
-        required: options.required
+        type: 'string',
+        required: options.required,
+        id: true, 
+        mongodb: {dataType: 'ObjectID'}
     });
 
     Model.observe('before save', (ctx, next) => {
