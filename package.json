@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "preversion": "npm test",
-    "watch": "gulp"
+    "watch": "gulp",
+    "preinstall": "gulp babel"
   },
   "keywords": [
     "loopback",
